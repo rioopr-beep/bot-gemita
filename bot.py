@@ -11,7 +11,7 @@ TOKEN = "8414991644:AAEckOBmcKSqkkgwpppmHsF4_VxsOuY4FxU"
 logging.basicConfig(level=logging.INFO)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Bot Aktif! Silakan kirim link video YouTube atau TikTok, Gemita. 😊")
+    await update.message.reply_text("Bot Aktif! Silakan kirim link video YouTube atau TikTok, 😊")
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     url = update.message.text
@@ -37,7 +37,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if os.path.exists(file_name):
             await progress_msg.edit_text("📤 Mengirim file ke Telegram...")
             with open(file_name, 'rb') as v:
-                await update.message.reply_video(video=v, caption="Ini videonya, Gemita! ✅")
+                await update.message.reply_video(video=v, caption="Ini videonya, ! ✅")
             os.remove(file_name) # Hapus file setelah kirim
             await progress_msg.delete()
         else:
